@@ -1,7 +1,11 @@
 import cohere
+import streamlit as st
+from temp import get_temp
 
 
-API_KEY = "your_api_key"
+
+
+API_KEY = "3GO3Yqcr7ON3XWRXC65XU8ssQg6Dl6rKBcF84CoR"
 co = cohere.Client(API_KEY)
 
 def get_general_response(prompt):
@@ -10,7 +14,7 @@ def get_general_response(prompt):
         response = co.chat(
             message=prompt,
             model="command-r-plus",  # You can also try "command-r"
-            temperature=0.7
+            temperature=get_temp("secure1")
         )
         return response.text
     except Exception as e:
@@ -38,7 +42,8 @@ def get_study_response(prompt):
         response = co.chat(
             message=prompt,
             model="command-r-plus",  
-            temperature=0.7
+            temperature=get_temp("secure2")
+            
         )
         return response.text
     except Exception as e:

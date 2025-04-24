@@ -1,7 +1,8 @@
 import fitz  # PyMuPDF
 import cohere
+from temp import get_temp
 
-API_KEY = "your_api_key"
+API_KEY = "3GO3Yqcr7ON3XWRXC65XU8ssQg6Dl6rKBcF84CoR"
 co = cohere.Client(API_KEY)
 
 def extract_text_from_pdf(pdf_path):
@@ -18,7 +19,7 @@ def summarize_pdf_text(text):
         response = co.chat(
             message=f"Please summarize the following text: {text}",
             model="command-r-plus",  # You can also try "command-r"
-            temperature=0.7
+            temperature=get_temp("secure4")
         )
         return response.text
     except Exception as e:

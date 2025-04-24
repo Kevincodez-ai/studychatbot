@@ -2,6 +2,8 @@ import streamlit as st
 from chatbot import get_general_response, get_study_response
 from mcq_generator import create_mcqs_from_pdf
 from pdf_summarizer import summarize_pdf
+from temp import get_temp
+
 
 # Streamlit Title
 st.title("Personal Study Assistant 📚")
@@ -46,4 +48,8 @@ elif chat_type == "PDF Summarizer":
         summary = summarize_pdf("uploaded_file.pdf")
         st.subheader("Summary of the PDF:")
         st.markdown(summary)
+
+
+st.markdown("0 -> simple answer")
+st.markdown("1 -> answer in depth")
 st.markdown("MADE WITH 🧡 BY KEVIN JAMES")
