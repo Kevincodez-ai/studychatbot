@@ -5,7 +5,7 @@ from temp import get_temp
 
 
 
-API_KEY = "3GO3Yqcr7ON3XWRXC65XU8ssQg6Dl6rKBcF84CoR"
+API_KEY = "api_key"
 co = cohere.Client(API_KEY)
 
 def get_general_response(prompt):
